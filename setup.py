@@ -1,13 +1,9 @@
 #! /usr/bin/env python
 
 import sys
+import os
 
 from setuptools import setup
-
-if sys.version_info >= (3, 0):
-    exec("def do_exec(co, loc): exec(co, loc)\n")
-else:
-    exec("def do_exec(co, loc): exec co in loc\n")
 
 tests_require = ['pytest>=2.3', 'tox', 'twine', 'pip>=7',
                  'passlib>=1.6', 'webtest']
@@ -22,12 +18,9 @@ else:
 
 
 def get_version():
-    d = {}
-    try:
-        do_exec(open("pypiserver/__init__.py").read(), d)  # @UndefinedVariable
-    except (ImportError, RuntimeError):
-        pass
-    return d["__version__"]
+    __version__ = open(os.path.join(
+        os.path.dirname(__file__), "pypiserver", "__version__")).read()
+    return __version__
 
 
 setup(name="pypiserver",
