@@ -1,6 +1,7 @@
 import re as _re
+import os
 
-version = __version__ = "1.2.1.dev0"
+version = __version__ = open(os.path.join(os.path.dirname(__file__), "__version__")).read()
 __version_info__ = tuple(_re.split('[.-]', __version__))
 __updated__ = "2016-XX-XX"
 
