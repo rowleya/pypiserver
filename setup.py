@@ -58,13 +58,13 @@ setup(name="pypiserver",
           "Programming Language :: Python :: 3.5",
           "Topic :: Software Development :: Build Tools",
           "Topic :: System :: Software Distribution"],
-      zip_safe=True,
-      entry_points={
-          'paste.app_factory': ['main=pypiserver:paste_app_factory'],
-          'console_scripts': ['pypi-server=pypiserver.__main__:main']
-      },
-      options={
-          'bdist_wheel': {'universal': True},
-      },
-      platforms=['any'],
+      # zip_safe=True,
+      # entry_points={
+      #    'paste.app_factory': ['main=pypiserver:paste_app_factory'],
+      #    'console_scripts': ['pypi-server=pypiserver.__main__:main']
+      # },
+      # options={
+      #     'bdist_wheel': {'universal': True},
+      # },
+      # platforms=['any'],
       )
