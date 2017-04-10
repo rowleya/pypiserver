@@ -5,10 +5,10 @@ import os
 
 from setuptools import setup
 
-tests_require = ['pytest>=2.3', 'tox', 'twine', 'pip>=7',
-                 'passlib>=1.6', 'webtest']
-if sys.version_info <= (3, 2):
-    tests_require.append('mock')
+# tests_require = ['pytest>=2.3', 'tox', 'twine', 'pip>=7',
+#                  'passlib>=1.6', 'webtest']
+# if sys.version_info <= (3, 2):
+#     tests_require.append('mock')
 
 setup_requires = ['setuptools', 'setuptools-git >= 0.3']
 if sys.version_info >= (3, 5):
@@ -34,7 +34,7 @@ setup(name="pypiserver",
           'passlib': ['passlib>=1.6'],
           'cache': ['watchdog']
       },
-      tests_require=tests_require,
+      # tests_require=tests_require,
       url="https://github.com/pypiserver/pypiserver",
       maintainer=("Kostis Anagnostopoulos <ankostis@gmail.com>"
               "Matthew Planchard <mplanchard@gmail.com>"),
